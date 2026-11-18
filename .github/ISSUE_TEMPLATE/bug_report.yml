@@ -1,0 +1,27 @@
+name: Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Input type
+      options: [Image, Video, Audio, Text, Link, Not related to an input]
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version and chip
+      placeholder: macOS 15.1, M2
+  - type: textarea
+    id: log
+    attributes:
+      label: Worker log
+      description: Settings → General → Show log. Remove anything private.
+      render: text

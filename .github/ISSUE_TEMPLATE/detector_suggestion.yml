@@ -1,0 +1,27 @@
+name: Detector suggestion
+description: Suggest a model Traels should support
+labels: [detector]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: Hugging Face repo
+      placeholder: owner/model-name
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What does it detect?
+      options: [Images, Video, Voice, Music, Text]
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this model?
+      description: Benchmarks, generators it covers, size, anything you've tested.
