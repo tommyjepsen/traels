@@ -42,6 +42,25 @@ AI-generated or fake, with a plain-language summary and a per-model breakdown.
 
 ## Install
 
+### Download
+
+Requirements: macOS 14+, Apple Silicon, and [uv](https://docs.astral.sh/uv/) (`brew install uv`).
+
+1. Download `Traels-<version>-macOS.zip` from the [latest release](https://github.com/tommyjepsen/traels/releases/latest).
+2. Unzip it and move `Traels.app` to **Applications**.
+3. Open it. See the note below the first time.
+
+> [!NOTE]
+> **Traels isn't notarized by Apple yet**, so the first time you open it macOS says it can't verify
+> the app. To open it anyway:
+>
+> - **macOS 15 or later:** open the app once, then go to **System Settings → Privacy & Security**,
+>   scroll down and click **Open Anyway**.
+> - **macOS 14:** right-click `Traels.app` → **Open** → **Open**.
+> - **Or, in Terminal:** `xattr -dr com.apple.quarantine /Applications/Traels.app`
+>
+> You only need to do this once. If you'd rather not, build it from source, which skips this step.
+
 ### Build from source
 
 Requirements: macOS 14+, Xcode 16 / Swift 6, and [uv](https://docs.astral.sh/uv/).
@@ -56,8 +75,6 @@ swift run Traels           # dev run; finds ./backend automatically
 scripts/build-app.sh       # builds build/Traels.app with the Python backend bundled
 open build/Traels.app
 ```
-
-The app is ad-hoc signed. If macOS says it can't be opened, right-click the app → **Open**.
 
 ### First launch
 
